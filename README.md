@@ -1,18 +1,150 @@
-# React + Vite
+# 🎓 Apex Institute of Engineering & Technology  
+### *Engineering the Future*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Project Overview  
+Apex Institute of Engineering & Technology is a fully responsive university website designed to replicate a real-world digital campus experience. The platform provides structured academic information, intuitive navigation, and an engaging user interface for students exploring engineering education.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The objective of this project was to deliver a complete, production-ready frontend solution within a limited hackathon timeframe.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🌐 Live Demo  
+🔗 https://apex-institute-webpage.vercel.app/
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 💻 GitHub Repository  
+🔗 https://github.com/Swapnilbiswas2007/apex-institute-webpage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧩 Core Features Implemented  
+
+### 🏠 Homepage  
+- Modern hero section with strong call-to-action  
+- Quick navigation to courses, placements, and admissions  
+- Highlights of announcements and testimonials  
+
+### 🏫 About Us  
+- Vision and mission of the institute  
+- Overview of campus and facilities  
+
+### ⚙️ Courses / Programs  
+- Computer Science Engineering (CSE)  
+- Electronics & Communication Engineering (ECE)  
+- Mechanical Engineering  
+- Civil Engineering  
+
+### 💼 Placements  
+- Placement statistics (average & highest package)  
+- Top recruiters showcase  
+
+### 📢 Announcements  
+- Notice board-style updates  
+- Events and important notifications  
+
+### 🎓 Alumni & Testimonials  
+- Alumni profiles with career highlights  
+- Student testimonials with ratings  
+
+### 📝 Admissions  
+- Step-by-step admission process  
+- Eligibility criteria  
+- Application interface  
+
+### 📞 Contact Us  
+- Contact details and location  
+- Contact form  
+
+### 🗺️ Virtual Campus Tour  
+- Aerial campus visualization  
+- Highlights of key infrastructure  
+
+---
+
+## 🌟 Unique Features  
+
+### 📚 Exam Preparation Hub  
+- Previous year questions  
+- Subject-wise categorization  
+- Important topics focus  
+
+👉 Enhances the platform into a learning support system  
+
+---
+
+### 🚀 Skill Development Section  
+
+#### 🧠 Skill-Based Courses  
+- Technical and core engineering skills  
+
+#### 💼 Internship Opportunities  
+- Industry exposure for students  
+
+#### 🏆 Hackathons & Competitions  
+- Innovation and participation opportunities  
+
+👉 Creates a complete student growth ecosystem  
+
+---
+
+## 🎯 Key Highlights  
+
+- Fully responsive design  
+- Clean and modern UI  
+- Smooth navigation  
+- Fast and lightweight frontend  
+- Scalable structure  
+
+---
+
+## 🛠️ Tech Stack  
+
+- HTML5  
+- CSS3  
+- JavaScript  
+- React.js  
+- Vite  
+
+---
+
+## 🧠 Challenges Faced  
+
+- Managing time within a 10-hour hackathon  
+- Prioritizing completeness over feature overload  
+- Maintaining UI consistency  
+- Ensuring responsiveness  
+
+---
+
+## 📈 Future Enhancements  
+
+- Interactive campus map  
+- Advanced course filtering  
+- Dark mode  
+- Student dashboard  
+- Backend integration  
+
+---
+
+## 🏆 Conclusion  
+
+This project delivers a realistic, scalable, and user-centric university platform.  
+The focus was on building a complete and polished frontend experience while keeping the system ready for future backend integration.
+
+---
+
+## 👥 Team Members  
+
+- Team:DeVibe  
+- Teammate Name: Aditya Raj 
+- Teammate Name: Jiya Jain 
+- Teammate Name: Swapnil Biswas
+
+---
+
+## 📌 Note  
+
+This project was built during a hackathon with emphasis on design, usability, and completeness.
