@@ -40,11 +40,17 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
   transition:
     background-color 220ms ease,
     color 220ms ease;
@@ -66,16 +72,17 @@ img {
 
 #root {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .container {
-  width: min(1020px, calc(100% - 2rem));
+  width: min(960px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
 .hero-shell,
 .cards-shell {
-  width: min(1360px, calc(100% - 2.35rem));
+  width: min(1280px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -371,7 +378,7 @@ img {
 .hero-stage {
   position: relative;
   overflow: hidden;
-  min-height: clamp(340px, calc(100vh - 18.5rem), 500px);
+  min-height: clamp(300px, calc(100vh - 19.5rem), 450px);
   border-radius: 2rem;
   box-shadow: 0 26px 70px rgba(14, 33, 68, 0.12);
   transform: translateZ(0);
@@ -392,7 +399,7 @@ img {
 }
 
 .highlights {
-  padding: 1.2rem 0 3.1rem;
+  padding: 0.95rem 0 2.5rem;
 }
 
 .campus-info-section {
@@ -410,7 +417,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 0.85rem;
-  min-height: 440px;
+  min-height: 390px;
 }
 
 .campus-collage-tall,
@@ -534,7 +541,7 @@ img {
 
 .campus-info-copy h2 {
   margin: 0;
-  font-size: clamp(1.5rem, 1.95vw, 2rem);
+  font-size: clamp(1.32rem, 1.7vw, 1.72rem);
   line-height: 1.08;
   color: #112239;
 }
@@ -542,7 +549,7 @@ img {
 .campus-info-text {
   margin: 1rem 0 0;
   color: #55687f;
-  font-size: 1rem;
+  font-size: 0.94rem;
 }
 
 .campus-feature-grid {
@@ -579,7 +586,7 @@ img {
 
 .campus-stat strong {
   display: block;
-  font-size: clamp(1.8rem, 2.5vw, 2.65rem);
+  font-size: clamp(1.62rem, 2.15vw, 2.25rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
   color: #0f4f80;
@@ -603,8 +610,8 @@ img {
   grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
   align-items: center;
   gap: clamp(1.15rem, 3vw, 3.4rem);
-  min-height: 340px;
-  padding: 1rem 0 0.5rem;
+  min-height: 300px;
+  padding: 0.8rem 0 0.4rem;
 }
 
 .innovation-showcase-copy {
@@ -630,7 +637,7 @@ img {
 .innovation-showcase-copy h2 {
   margin: 0;
   color: #0f4f80;
-  font-size: clamp(1.5rem, 1.95vw, 2.1rem);
+  font-size: clamp(1.34rem, 1.7vw, 1.8rem);
   font-weight: 900;
   line-height: 1.04;
   text-transform: uppercase;
@@ -640,7 +647,7 @@ img {
   max-width: 32rem;
   margin: 1.1rem 0 0;
   color: #35475c;
-  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-size: clamp(0.94rem, 1vw, 1.02rem);
   line-height: 1.45;
 }
 
@@ -705,7 +712,7 @@ img {
 .virtual-tour-header h2 {
   margin: 0;
   color: #112239;
-  font-size: clamp(1.45rem, 1.8vw, 1.9rem);
+  font-size: clamp(1.28rem, 1.55vw, 1.62rem);
   line-height: 1.08;
   white-space: nowrap;
 }
@@ -869,7 +876,7 @@ img {
 .courses-header h2 {
   margin: 0;
   color: #112239;
-  font-size: clamp(1.5rem, 1.95vw, 2rem);
+  font-size: clamp(1.32rem, 1.7vw, 1.72rem);
   line-height: 1.08;
 }
 
@@ -927,7 +934,7 @@ img {
 }
 
 .course-card {
-  min-height: 19.75rem;
+  min-height: 18rem;
   perspective: 1400px;
 }
 
@@ -982,7 +989,7 @@ img {
 
 .course-card-back p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   font-weight: 800;
   line-height: 1.25;
 }
@@ -990,7 +997,7 @@ img {
 .course-card-back span {
   display: block;
   color: #dce9f7;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   line-height: 1.45;
 }
 
@@ -1018,7 +1025,7 @@ img {
 .alumni-section-header h2 {
   margin: 0;
   color: #2c241c;
-  font-size: clamp(1.5rem, 1.95vw, 2rem);
+  font-size: clamp(1.32rem, 1.7vw, 1.72rem);
   line-height: 1.08;
 }
 
@@ -1181,7 +1188,7 @@ img {
 .placement-gallery-header h2 {
   margin: 0;
   color: #112239;
-  font-size: clamp(1.5rem, 1.95vw, 2rem);
+  font-size: clamp(1.32rem, 1.7vw, 1.72rem);
   line-height: 1.08;
 }
 
@@ -1590,6 +1597,7 @@ img {
 }
 
 .theme-dark .sample-description,
+.theme-dark .sample-hero-summary,
 .theme-dark .sample-panel p,
 .theme-dark .sample-list p,
 .theme-dark .sample-stat-card span,
@@ -1603,6 +1611,20 @@ img {
   box-shadow:
     inset 0 0 0 1px rgba(126, 192, 255, 0.12),
     0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.theme-dark .sample-hero-media {
+  background: #122034;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.theme-dark .sample-hero-overlay {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(9, 16, 27, 0.78), rgba(7, 13, 22, 0.92));
+}
+
+.theme-dark .sample-gallery-card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
 }
 
 .theme-dark .info-card,
@@ -1646,16 +1668,24 @@ img {
 }
 
 .sample-shell {
-  width: min(1280px, calc(100% - 2rem));
+  width: min(1160px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
 .sample-hero {
-  padding: 4.5rem 0 2rem;
+  padding: 3rem 0 1.6rem;
+}
+
+.sample-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.88fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: stretch;
 }
 
 .sample-hero-copy {
   max-width: 760px;
+  padding: 1.2rem 0;
 }
 
 .sample-eyebrow,
@@ -1706,7 +1736,7 @@ img {
 }
 
 .sample-title-row h1 {
-  font-size: clamp(2.2rem, 4vw, 4.1rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.75rem);
   line-height: 1.05;
 }
 
@@ -1720,7 +1750,63 @@ img {
 .sample-description {
   margin-top: 1rem;
   max-width: 64ch;
-  font-size: 1.06rem;
+  font-size: 0.98rem;
+}
+
+.sample-hero-summary {
+  max-width: 60ch;
+  margin: 1rem 0 0;
+  color: #456078;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.sample-hero-media {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  border-radius: 2rem;
+  background: #dce9f8;
+  box-shadow: 0 24px 60px rgba(17, 34, 57, 0.12);
+}
+
+.sample-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sample-hero-overlay {
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.4rem;
+  background: linear-gradient(180deg, rgba(14, 29, 48, 0.78), rgba(11, 20, 32, 0.9));
+  color: #f5f9ff;
+  backdrop-filter: blur(12px);
+}
+
+.sample-hero-overlay p,
+.sample-hero-overlay strong {
+  display: block;
+  margin: 0;
+}
+
+.sample-hero-overlay p {
+  color: #9dcfff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sample-hero-overlay strong {
+  margin-top: 0.55rem;
+  font-size: 1.02rem;
+  line-height: 1.5;
 }
 
 .sample-tags,
@@ -1749,11 +1835,22 @@ img {
 
 .sample-panel {
   margin-top: 2rem;
-  padding: 1.5rem;
+  padding: 1.2rem;
   border: 1px solid rgba(17, 34, 57, 0.08);
   border-radius: 1.5rem;
   background: rgba(255, 255, 255, 0.84);
   box-shadow: 0 20px 40px rgba(17, 34, 57, 0.08);
+}
+
+.sample-panel-featured {
+  margin-top: 2rem;
+}
+
+.sample-panel-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.7fr);
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .sample-stats {
@@ -1776,7 +1873,7 @@ img {
 
 .sample-stat-card strong {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   color: #112239;
 }
 
@@ -1794,8 +1891,13 @@ img {
   gap: 1rem;
 }
 
+.sample-grid-secondary {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  margin-top: 1rem;
+}
+
 .sample-card {
-  padding: 1.5rem;
+  padding: 1.15rem;
   box-shadow: 0 18px 40px rgba(17, 34, 57, 0.06);
 }
 
@@ -1812,6 +1914,26 @@ img {
 .sample-chip-grid span {
   padding: 0.72rem 0.95rem;
   font-weight: 600;
+}
+
+.sample-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sample-gallery-card {
+  overflow: hidden;
+  min-height: 210px;
+  border-radius: 1.6rem;
+  box-shadow: 0 20px 40px rgba(17, 34, 57, 0.08);
+}
+
+.sample-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header-demo-shell {
@@ -2321,6 +2443,17 @@ img {
 
   .sample-hero {
     padding-top: 3rem;
+  }
+
+  .sample-hero-grid,
+  .sample-panel-header,
+  .sample-grid-secondary,
+  .sample-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-hero-media {
+    min-height: 280px;
   }
 
   .sample-title-row {

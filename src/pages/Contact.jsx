@@ -1,6 +1,11 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
+const FALLBACK_CONTACT_IMAGES = [
+  "/homepage-slideshow/sd2.jpeg",
+  "/campus-collage/img3.jpeg",
+];
+
 const CONTACT_CARDS = [
   {
     title: "Admissions Office",
@@ -25,6 +30,22 @@ const ENQUIRY_TOPICS = [
   "Academic departments",
 ];
 
+const CONTACT_IMAGES = [
+  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1400&auto=format&fit=crop",
+];
+
+function handleImageFallback(event, fallbackSrc) {
+  const image = event.currentTarget;
+
+  if (image.dataset.fallbackApplied === "true") {
+    return;
+  }
+
+  image.dataset.fallbackApplied = "true";
+  image.src = fallbackSrc;
+}
+
 export default function Contact() {
   return (
     <>
@@ -32,26 +53,58 @@ export default function Contact() {
       <main className="sample-page">
         <section className="sample-hero">
           <div className="sample-shell">
-            <div className="sample-hero-copy">
-              <p className="sample-eyebrow">Contact Apex</p>
-              <div className="sample-title-row">
-                <div>
-                  <p className="sample-breadcrumb">Home / Contact Us</p>
-                  <h1>Get in touch with the right team quickly.</h1>
+            <div className="sample-hero-grid">
+              <div className="sample-hero-copy">
+                <p className="sample-eyebrow">Contact Apex</p>
+                <div className="sample-title-row">
+                  <div>
+                    <p className="sample-breadcrumb">Home / Contact Us</p>
+                    <h1>Get in touch with the right team quickly.</h1>
+                  </div>
+                </div>
+                <p className="sample-description">
+                  Reach the appropriate office for admissions, student services, transport,
+                  residential support, or general campus enquiries without unnecessary back and forth.
+                </p>
+                <p className="sample-hero-summary">
+                  This page is ready for your final form embed, department-wise contacts,
+                  map support, and admissions helpdesk details while already matching the
+                  visual language of the homepage.
+                </p>
+                <div className="sample-tags">
+                  {["Admissions", "Student Support", "Campus Visits"].map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
                 </div>
               </div>
-              <p className="sample-description">
-                This sample contact page can later be replaced with your final enquiry form,
-                map embed, department-wise contacts, and admission helpdesk details.
-              </p>
+
+              <div className="sample-hero-media">
+                <img
+                  src={CONTACT_IMAGES[0]}
+                  alt="Apex contact support"
+                  onError={(event) => handleImageFallback(event, FALLBACK_CONTACT_IMAGES[0])}
+                />
+                <div className="sample-hero-overlay">
+                  <p>Support and Guidance</p>
+                  <strong>
+                    Connect students, parents, and applicants to the right contact point faster.
+                  </strong>
+                </div>
+              </div>
             </div>
 
-            <div className="sample-panel">
-              <h2>Quick Snapshot</h2>
-              <p>
-                This route is now available at <strong>/contact-us</strong> and also supports
-                redirect aliases for easier navigation.
-              </p>
+            <div className="sample-panel sample-panel-featured">
+              <div className="sample-panel-header">
+                <div>
+                  <p className="sample-card-label">Quick Snapshot</p>
+                  <h2>Contact support at a glance</h2>
+                </div>
+                <p>
+                  This route is available at <strong>/contact-us</strong> and already supports
+                  redirect aliases for easier navigation from the rest of the site.
+                </p>
+              </div>
+
               <div className="sample-stats">
                 <div className="sample-stat-card">
                   <strong>3</strong>
@@ -71,8 +124,8 @@ export default function Contact() {
         </section>
 
         <section className="sample-content">
-          <div className="sample-shell sample-grid">
-            <article className="sample-card">
+          <div className="sample-shell sample-grid sample-grid-main">
+            <article className="sample-card sample-card-wide">
               <p className="sample-card-label">Contact Channels</p>
               <h2>Where visitors can reach you</h2>
               <div className="sample-list">
@@ -112,6 +165,19 @@ export default function Contact() {
                 ))}
               </div>
             </article>
+          </div>
+
+          <div className="sample-shell sample-gallery-grid">
+            {CONTACT_IMAGES.map((image, index) => (
+              <article className="sample-gallery-card" key={`contact-${index}`}>
+                <img
+                  src={image}
+                  alt=""
+                  aria-hidden="true"
+                  onError={(event) => handleImageFallback(event, FALLBACK_CONTACT_IMAGES[index])}
+                />
+              </article>
+            ))}
           </div>
         </section>
       </main>
