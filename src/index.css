@@ -685,6 +685,12 @@ img {
 .virtual-tour-header {
   max-width: 58rem;
   margin-bottom: 1.8rem;
+  opacity: 0;
+  transform: translate3d(-72px, 0, 0);
+  will-change: transform, opacity;
+  transition:
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 680ms ease;
 }
 
 .virtual-tour-kicker {
@@ -717,6 +723,18 @@ img {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 248, 255, 0.96) 100%);
   box-shadow: 0 20px 44px rgba(15, 79, 128, 0.1);
+  opacity: 0;
+  transform: translate3d(0, 76px, 0);
+  will-change: transform, opacity;
+  transition:
+    transform 860ms cubic-bezier(0.22, 1, 0.36, 1) 120ms,
+    opacity 700ms ease 120ms;
+}
+
+.virtual-tour-section.is-visible .virtual-tour-header,
+.virtual-tour-section.is-visible .virtual-tour-stage {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .virtual-tour-map {
@@ -826,7 +844,224 @@ img {
   outline: none;
 }
 
+.courses-section {
+  padding: 4rem 0 1.5rem;
+}
+
+.courses-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.courses-kicker {
+  margin: 0 0 0.65rem;
+  color: #0f4f80;
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.courses-header h2 {
+  margin: 0;
+  color: #112239;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+}
+
+.courses-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem;
+  border-radius: 999px;
+  background: rgba(15, 79, 128, 0.08);
+}
+
+.courses-tab {
+  min-width: 5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.3rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #30506f;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.courses-tab:hover,
+.courses-tab:focus-visible {
+  color: #0f4f80;
+  transform: translateY(-1px);
+}
+
+.courses-tab.is-active {
+  background: #0f4f80;
+  color: #ffffff;
+  box-shadow: 0 14px 26px rgba(15, 79, 128, 0.22);
+}
+
+.courses-grid {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.courses-grid-ug {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.courses-grid-pg {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.course-card {
+  min-height: 25rem;
+  perspective: 1400px;
+}
+
+.course-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.course-card:hover .course-card-inner,
+.course-card:focus-within .course-card-inner {
+  transform: rotateY(180deg);
+}
+
+.course-card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(15, 79, 128, 0.12);
+}
+
+.course-card-front {
+  background: linear-gradient(180deg, #b01f32 0%, #97172a 100%);
+  color: #ffffff;
+}
+
+.course-card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.course-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-card-back {
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.7rem;
+  background: linear-gradient(180deg, #103d66 0%, #0f4f80 100%);
+  color: #eef6ff;
+  transform: rotateY(180deg);
+}
+
+.course-card-back p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.course-card-back span {
+  display: block;
+  color: #dce9f7;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.placement-gallery-section {
+  padding: 4rem 0 2rem;
+}
+
+.placement-gallery-header {
+  max-width: 46rem;
+  margin-bottom: 1.8rem;
+}
+
+.placement-gallery-kicker {
+  margin: 0 0 0.65rem;
+  color: #0f4f80;
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.placement-gallery-header h2 {
+  margin: 0;
+  color: #112239;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+}
+
+.placement-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.placement-gallery-card {
+  overflow: hidden;
+  border-radius: 1.6rem;
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 79, 128, 0.1);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.placement-gallery-card-top {
+  transform: translate3d(-88px, 0, 0);
+  transition:
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 680ms ease;
+}
+
+.placement-gallery-card-bottom {
+  transform: translate3d(88px, 0, 0);
+  transition:
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1) 120ms,
+    opacity 680ms ease 120ms;
+}
+
+.placement-gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.placement-gallery-section.is-visible .placement-gallery-card {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 .innovation-showcase-copy h2,
+.courses-header h2,
+.placement-gallery-header h2,
 .virtual-tour-header h2,
 .site-footer h2 {
   margin-top: 0;
@@ -1445,6 +1680,40 @@ img {
     padding-top: 3rem;
   }
 
+  .courses-section {
+    padding-top: 3rem;
+  }
+
+  .courses-header {
+    align-items: start;
+  }
+
+  .courses-grid-ug,
+  .courses-grid-pg {
+    grid-template-columns: 1fr;
+  }
+
+  .placement-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .placement-gallery-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .course-card {
+    min-height: 22rem;
+  }
+
+  .virtual-tour-header,
+  .virtual-tour-stage {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .virtual-tour-stage {
     overflow: visible;
     padding-bottom: 13rem;
@@ -1509,7 +1778,10 @@ img {
   .campus-collage-card,
   .campus-info-copy,
   .innovation-showcase-copy,
-  .innovation-showcase-media {
+  .innovation-showcase-media,
+  .virtual-tour-header,
+  .virtual-tour-stage,
+  .placement-gallery-card {
     opacity: 1;
     transform: none;
     transition: none;

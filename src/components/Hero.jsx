@@ -27,6 +27,10 @@ const campusImages = [
 const innovationShowcaseImage =
   "/innovation-showcase/Screenshot 2026-03-27 162756.png";
 const virtualCampusImage = "/virtual-campus/campusmap.jpeg";
+const placementGalleryImages = [
+  "/placement-gallery/batch stats.jpeg",
+  "/placement-gallery/placement stats.jpeg",
+];
 
 const ANNOUNCEMENTS = [
   { label: "2026-27 Fees", link: "/announcement/scholarships" },
@@ -48,6 +52,72 @@ const CAMPUS_STATS = [
   { value: "25+", label: "YEARS" },
   { value: "90% +", label: "PLACEMENT RATE" },
   { value: "320+", label: "INDUSTRY PARTNERS" },
+];
+
+const UG_COURSES = [
+  {
+    title: "Artificial Intelligence and Machine Learning",
+    image: "/course-placeholders/ug aiml.jpeg",
+    brief:
+      "Build intelligent systems using machine learning, deep learning, data science, and real-world AI applications.",
+  },
+  {
+    title: "Computer Science and Engineering",
+    image: "/course-placeholders/ug cse ug.jpeg",
+    brief:
+      "Develop strong foundations in software engineering, algorithms, databases, cloud computing, and modern application development.",
+  },
+  {
+    title: "Architecture",
+    image: "/course-placeholders/ug arch.jpeg",
+    brief:
+      "Design creative, functional, and sustainable built environments through studio practice, planning, and construction knowledge.",
+  },
+  {
+    title: "Electronics and Communication Engineering",
+    image: "/course-placeholders/ug ece.jpeg",
+    brief:
+      "Explore communication systems, embedded electronics, signal processing, VLSI, and connected digital technologies.",
+  },
+  {
+    title: "Civil Engineering",
+    image: "/course-placeholders/ug civil.jpeg",
+    brief:
+      "Learn structural design, transportation, environmental systems, surveying, and infrastructure development for the built world.",
+  },
+  {
+    title: "Mechanical Engineering",
+    image: "/course-placeholders/ug mech.jpeg",
+    brief:
+      "Study machines, manufacturing, thermodynamics, automation, and product design for industrial and real-world problem solving.",
+  },
+];
+
+const PG_COURSES = [
+  {
+    title: "Master of Computer Applications",
+    image: "/course-placeholders/pg mca.jpeg",
+    brief:
+      "Advance your skills in programming, software architecture, databases, cloud systems, and enterprise application development.",
+  },
+  {
+    title: "M.Tech in Computer Science and Engineering",
+    image: "/course-placeholders/pg cse.jpeg",
+    brief:
+      "Deepen expertise in advanced computing, intelligent systems, distributed platforms, and research-driven software innovation.",
+  },
+  {
+    title: "M.Tech in Cybersecurity",
+    image: "/course-placeholders/pg cybersecurity.jpeg",
+    brief:
+      "Focus on ethical hacking, network defense, cyber forensics, secure systems, and modern information security practices.",
+  },
+  {
+    title: "M.Tech in VLSI Design",
+    image: "/course-placeholders/pg vlsi.jpeg",
+    brief:
+      "Specialize in chip design, semiconductor systems, embedded hardware, verification, and next-generation electronic design workflows.",
+  },
 ];
 
 const TOUR_LOCATIONS = [
@@ -133,17 +203,23 @@ const TOUR_LOCATIONS = [
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [courseTab, setCourseTab] = useState("UG");
   const [tickerMetrics, setTickerMetrics] = useState({
     offset: 0,
     travel: 0,
   });
   const [campusInView, setCampusInView] = useState(false);
   const [innovationInView, setInnovationInView] = useState(false);
+  const [tourInView, setTourInView] = useState(false);
+  const [placementInView, setPlacementInView] = useState(false);
   const activeSlide = slideImages[currentSlide];
   const tickerViewportRef = useRef(null);
   const tickerTrackRef = useRef(null);
   const campusSectionRef = useRef(null);
   const innovationSectionRef = useRef(null);
+  const tourSectionRef = useRef(null);
+  const placementSectionRef = useRef(null);
+  const courseCards = courseTab === "UG" ? UG_COURSES : PG_COURSES;
 
   useEffect(() => {
     if (slideImages.length <= 1) {
@@ -243,6 +319,60 @@ export default function Hero() {
       },
       {
         threshold: 0.24,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const section = tourSectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        setTourInView(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.18,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const section = placementSectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        setPlacementInView(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.18,
         rootMargin: "0px 0px -8% 0px",
       }
     );
@@ -373,7 +503,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="cards-shell virtual-tour-section">
+        <div
+          ref={tourSectionRef}
+          className={`cards-shell virtual-tour-section${tourInView ? " is-visible" : ""}`}
+        >
           <div className="virtual-tour-header">
             <p className="virtual-tour-kicker">Campus Tour</p>
             <h2>Explore key spaces across the campus map.</h2>
@@ -403,6 +536,77 @@ export default function Hero() {
                 </span>
               </button>
             ))}
+          </div>
+        </div>
+
+        <div className="cards-shell courses-section">
+          <div className="courses-header">
+            <p className="courses-kicker">Courses</p>
+            <h2>Choose your academic path.</h2>
+            <div className="courses-toggle" role="tablist" aria-label="Course level">
+              <button
+                type="button"
+                className={`courses-tab${courseTab === "UG" ? " is-active" : ""}`}
+                role="tab"
+                aria-selected={courseTab === "UG"}
+                onClick={() => setCourseTab("UG")}
+              >
+                UG
+              </button>
+              <button
+                type="button"
+                className={`courses-tab${courseTab === "PG" ? " is-active" : ""}`}
+                role="tab"
+                aria-selected={courseTab === "PG"}
+                onClick={() => setCourseTab("PG")}
+              >
+                PG
+              </button>
+            </div>
+          </div>
+
+          <div className={`courses-grid courses-grid-${courseTab.toLowerCase()}`}>
+            {courseCards.map((course, index) => (
+              <article key={course.title} className="course-card">
+                <div className="course-card-inner">
+                  <div className="course-card-face course-card-front">
+                    <div className="course-card-image">
+                      <img src={course.image} alt="" aria-hidden="true" />
+                    </div>
+                  </div>
+                  <div className="course-card-face course-card-back">
+                    <p>{course.title}</p>
+                    <span>{course.brief}</span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div
+          ref={placementSectionRef}
+          className={`cards-shell placement-gallery-section${placementInView ? " is-visible" : ""}`}
+        >
+          <div className="placement-gallery-header">
+            <p className="placement-gallery-kicker">Placements</p>
+            <h2>Placement highlights and branch-wise performance.</h2>
+          </div>
+
+          <div className="placement-gallery-grid">
+            <article className="placement-gallery-card placement-gallery-card-top">
+              <img
+                src={placementGalleryImages[0]}
+                alt="Batch placement statistics"
+              />
+            </article>
+
+            <article className="placement-gallery-card placement-gallery-card-bottom">
+              <img
+                src={placementGalleryImages[1]}
+                alt="Branch-wise placement statistics"
+              />
+            </article>
           </div>
         </div>
       </section>
