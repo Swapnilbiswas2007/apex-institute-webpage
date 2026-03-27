@@ -3,6 +3,7 @@ import ChatbotWidget from "./components/ChatbotWidget";
 import EnquireNowButton from "./components/EnquireNowButton";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
+import EnquiryConfirmation from "./pages/EnquiryConfirmation";
 import MenuDetailPage from "./pages/MenuDetailPage";
 import {
   MENU_PAGES,
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/contact-us/confirmation" element={<EnquiryConfirmation />} />
         <Route path="/contact" element={<Navigate replace to="/contact-us" />} />
         <Route path="/contactus" element={<Navigate replace to="/contact-us" />} />
         {SECTION_REDIRECTS.map(({ from, to }) => (

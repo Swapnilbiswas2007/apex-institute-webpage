@@ -1996,6 +1996,235 @@ img {
   display: block;
 }
 
+.enquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(9, 18, 30, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.enquiry-modal {
+  width: min(52rem, 100%);
+  max-height: min(92vh, 52rem);
+  overflow: auto;
+  border: 1px solid rgba(19, 34, 56, 0.1);
+  border-radius: 1.8rem;
+  background:
+    radial-gradient(circle at top left, rgba(24, 160, 251, 0.12), transparent 32%),
+    rgba(255, 255, 255, 0.98);
+  box-shadow: 0 32px 80px rgba(8, 15, 30, 0.24);
+}
+
+.enquiry-modal-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.4rem 1.4rem 0;
+}
+
+.enquiry-modal-kicker {
+  margin: 0;
+  color: #0f4f80;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.enquiry-modal-header h2 {
+  margin: 0.45rem 0 0;
+  color: #112239;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  line-height: 1.08;
+}
+
+.enquiry-close-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(15, 79, 128, 0.08);
+  color: #17314f;
+  cursor: pointer;
+}
+
+.enquiry-form {
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.enquiry-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.enquiry-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.enquiry-field-full {
+  margin-top: 1rem;
+}
+
+.enquiry-field span {
+  color: #274866;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.enquiry-field input,
+.enquiry-field select,
+.enquiry-field textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(19, 34, 56, 0.14);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  color: #132238;
+  outline: none;
+}
+
+.enquiry-field textarea {
+  resize: vertical;
+}
+
+.enquiry-field input:focus,
+.enquiry-field select:focus,
+.enquiry-field textarea:focus {
+  border-color: rgba(11, 92, 255, 0.35);
+  box-shadow: 0 0 0 3px rgba(11, 92, 255, 0.1);
+}
+
+.enquiry-phone-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.75rem;
+}
+
+.enquiry-consent {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: #456078;
+  font-size: 0.9rem;
+}
+
+.enquiry-consent input {
+  margin-top: 0.15rem;
+}
+
+.enquiry-error {
+  margin: 0.85rem 0 0;
+  color: #b42318;
+  font-size: 0.88rem;
+}
+
+.enquiry-actions,
+.enquiry-confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.enquiry-primary-button,
+.enquiry-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3.1rem;
+  padding: 0.85rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.enquiry-primary-button {
+  border: 0;
+  background: linear-gradient(135deg, #0f4f80 0%, #132238 100%);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(15, 79, 128, 0.18);
+  cursor: pointer;
+}
+
+.enquiry-secondary-button {
+  border: 1px solid rgba(19, 34, 56, 0.14);
+  background: rgba(255, 255, 255, 0.8);
+  color: #17314f;
+  cursor: pointer;
+}
+
+.enquiry-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.95rem 0 0;
+  color: #5f6f82;
+  font-size: 0.82rem;
+}
+
+.enquiry-confirmation-card {
+  padding: 2rem;
+  border: 1px solid rgba(17, 34, 57, 0.08);
+  border-radius: 1.8rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 60px rgba(17, 34, 57, 0.08);
+}
+
+.enquiry-confirmation-card h1 {
+  margin: 0.7rem 0 0;
+  color: #112239;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  line-height: 1.08;
+}
+
+.enquiry-confirmation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.enquiry-confirmation-item {
+  padding: 1rem;
+  border: 1px solid rgba(17, 34, 57, 0.08);
+  border-radius: 1.2rem;
+  background: rgba(245, 249, 255, 0.96);
+}
+
+.enquiry-confirmation-item span,
+.enquiry-confirmation-item strong {
+  display: block;
+}
+
+.enquiry-confirmation-item span {
+  color: #5f6f82;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.enquiry-confirmation-item strong {
+  margin-top: 0.45rem;
+  color: #132238;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
 .chatbot-launcher {
   display: inline-flex;
   align-items: center;
@@ -2197,6 +2426,60 @@ img {
 .theme-dark .enquire-now-button {
   background: linear-gradient(180deg, #1b69a5 0%, #103d66 100%);
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+}
+
+.theme-dark .enquiry-modal {
+  border-color: rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(126, 192, 255, 0.14), transparent 32%),
+    rgba(16, 23, 35, 0.98);
+}
+
+.theme-dark .enquiry-modal-kicker {
+  color: #7ec0ff;
+}
+
+.theme-dark .enquiry-modal-header h2,
+.theme-dark .enquiry-confirmation-card h1,
+.theme-dark .enquiry-confirmation-item strong {
+  color: #f5f9ff;
+}
+
+.theme-dark .enquiry-close-button {
+  background: rgba(126, 192, 255, 0.12);
+  color: #dcecff;
+}
+
+.theme-dark .enquiry-field span,
+.theme-dark .enquiry-consent,
+.theme-dark .enquiry-note,
+.theme-dark .enquiry-confirmation-item span {
+  color: #a9b8cd;
+}
+
+.theme-dark .enquiry-field input,
+.theme-dark .enquiry-field select,
+.theme-dark .enquiry-field textarea {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(13, 19, 31, 0.92);
+  color: #edf4ff;
+}
+
+.theme-dark .enquiry-secondary-button {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: #edf4ff;
+}
+
+.theme-dark .enquiry-confirmation-card {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(17, 27, 41, 0.9);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.theme-dark .enquiry-confirmation-item {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(12, 20, 32, 0.9);
 }
 
 .theme-dark .chatbot-popup-header,
@@ -2570,6 +2853,20 @@ img {
     min-height: 8.9rem;
     padding: 0.52rem 0.38rem;
     font-size: 0.74rem;
+  }
+
+  .enquiry-modal {
+    max-height: min(94vh, 54rem);
+  }
+
+  .enquiry-form-grid,
+  .enquiry-phone-row,
+  .enquiry-confirmation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-confirmation-card {
+    padding: 1.3rem;
   }
 
   .chatbot-popup {
