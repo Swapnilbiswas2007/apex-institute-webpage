@@ -429,6 +429,45 @@ img {
   gap: 1rem;
 }
 
+.campus-collage-tall,
+.campus-collage-card,
+.campus-info-copy {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.campus-collage-tall {
+  transform: translate3d(-76px, 0, 0);
+  transition:
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 680ms ease;
+}
+
+.campus-collage-card {
+  transform: translate3d(84px, 0, 0);
+  transition:
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 680ms ease;
+}
+
+.campus-collage-card:last-child {
+  transition-delay: 120ms;
+}
+
+.campus-info-copy {
+  transform: translate3d(0, 72px, 0);
+  transition:
+    transform 860ms cubic-bezier(0.22, 1, 0.36, 1) 150ms,
+    opacity 700ms ease 150ms;
+}
+
+.campus-info-grid.is-visible .campus-collage-tall,
+.campus-info-grid.is-visible .campus-collage-card,
+.campus-info-grid.is-visible .campus-info-copy {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 .campus-collage img {
   width: 100%;
   height: 100%;
@@ -571,6 +610,12 @@ img {
 .innovation-showcase-copy {
   max-width: 35rem;
   padding-left: clamp(0rem, 2vw, 1rem);
+  opacity: 0;
+  transform: translate3d(0, 72px, 0);
+  will-change: transform, opacity;
+  transition:
+    transform 860ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 700ms ease;
 }
 
 .innovation-showcase-kicker {
@@ -611,6 +656,12 @@ img {
 .innovation-showcase-media {
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translate3d(84px, 0, 0);
+  will-change: transform, opacity;
+  transition:
+    transform 820ms cubic-bezier(0.22, 1, 0.36, 1) 120ms,
+    opacity 680ms ease 120ms;
 }
 
 .innovation-showcase-media img {
@@ -621,7 +672,162 @@ img {
   filter: drop-shadow(0 22px 34px rgba(15, 79, 128, 0.12));
 }
 
+.innovation-showcase-grid.is-visible .innovation-showcase-copy,
+.innovation-showcase-grid.is-visible .innovation-showcase-media {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.virtual-tour-section {
+  padding: 4rem 0 1rem;
+}
+
+.virtual-tour-header {
+  max-width: 58rem;
+  margin-bottom: 1.8rem;
+}
+
+.virtual-tour-kicker {
+  margin: 0 0 0.7rem;
+  color: #0f4f80;
+  font-size: 1.18rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.virtual-tour-header h2 {
+  margin: 0;
+  color: #112239;
+  font-size: clamp(1.9rem, 2.6vw, 2.8rem);
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+.virtual-tour-header p:last-child {
+  margin: 1rem 0 0;
+  color: #55687f;
+  font-size: 1rem;
+}
+
+.virtual-tour-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 248, 255, 0.96) 100%);
+  box-shadow: 0 20px 44px rgba(15, 79, 128, 0.1);
+}
+
+.virtual-tour-map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.virtual-tour-hotspot {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  text-align: left;
+}
+
+.virtual-tour-pin {
+  position: relative;
+  width: 1.55rem;
+  height: 1.55rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% 50% 50% 0;
+  background: linear-gradient(145deg, #ff2c23 0%, #cf0000 100%);
+  box-shadow:
+    0 0 0 0.34rem rgba(255, 28, 28, 0.18),
+    0 14px 22px rgba(138, 0, 0, 0.24);
+  transform: rotate(-45deg);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.virtual-tour-pin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.3rem);
+  width: 2.1rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 17, 17, 0.22);
+  transform: translateX(-50%) rotate(45deg);
+  filter: blur(0.2px);
+}
+
+.virtual-tour-pin-hole {
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.virtual-tour-tooltip {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 0.85rem);
+  width: min(18rem, 42vw);
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: rgba(17, 34, 57, 0.96);
+  color: #edf5ff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  box-shadow: 0 20px 34px rgba(6, 13, 24, 0.26);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+  z-index: 3;
+}
+
+.virtual-tour-tooltip strong {
+  display: block;
+  margin-bottom: 0.32rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.virtual-tour-tooltip span {
+  display: block;
+}
+
+.virtual-tour-hotspot:hover .virtual-tour-pin,
+.virtual-tour-hotspot:focus-visible .virtual-tour-pin {
+  transform: rotate(-45deg) scale(1.08);
+  box-shadow:
+    0 0 0 0.46rem rgba(255, 28, 28, 0.22),
+    0 16px 26px rgba(138, 0, 0, 0.28);
+}
+
+.virtual-tour-hotspot:hover .virtual-tour-tooltip,
+.virtual-tour-hotspot:focus-visible .virtual-tour-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.virtual-tour-hotspot:focus-visible {
+  outline: none;
+}
+
 .innovation-showcase-copy h2,
+.virtual-tour-header h2,
 .site-footer h2 {
   margin-top: 0;
 }
@@ -1200,6 +1406,14 @@ img {
     min-height: auto;
   }
 
+  .campus-collage-tall,
+  .campus-collage-card,
+  .campus-info-copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .innovation-showcase-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1210,15 +1424,44 @@ img {
   .innovation-showcase-copy {
     max-width: none;
     padding-left: 0;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .innovation-showcase-media {
     justify-content: center;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   .innovation-showcase-media img {
     width: min(100%, 22rem);
     margin-left: 0;
+  }
+
+  .virtual-tour-section {
+    padding-top: 3rem;
+  }
+
+  .virtual-tour-stage {
+    overflow: visible;
+    padding-bottom: 13rem;
+  }
+
+  .virtual-tour-hotspot {
+    transform: translate(-50%, -40%);
+  }
+
+  .virtual-tour-pin {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .virtual-tour-tooltip {
+    width: min(15rem, 74vw);
+    font-size: 0.82rem;
   }
 
   .campus-collage-tall {
@@ -1258,5 +1501,17 @@ img {
   .sample-stats,
   .sample-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-collage-tall,
+  .campus-collage-card,
+  .campus-info-copy,
+  .innovation-showcase-copy,
+  .innovation-showcase-media {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

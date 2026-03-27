@@ -26,6 +26,7 @@ const campusImages = [
 ];
 const innovationShowcaseImage =
   "/innovation-showcase/Screenshot 2026-03-27 162756.png";
+const virtualCampusImage = "/virtual-campus/campusmap.jpeg";
 
 const ANNOUNCEMENTS = [
   { label: "2026-27 Fees", link: "/announcement/scholarships" },
@@ -49,15 +50,100 @@ const CAMPUS_STATS = [
   { value: "320+", label: "INDUSTRY PARTNERS" },
 ];
 
+const TOUR_LOCATIONS = [
+  {
+    name: "Boys' Hostel",
+    description: "Residential block with secure accommodation, study areas, and quick access to the sports zone.",
+    top: "12%",
+    left: "26%",
+  },
+  {
+    name: "Girls' Hostel",
+    description: "A supervised hostel wing designed for comfort, campus connectivity, and student support.",
+    top: "12%",
+    left: "43%",
+  },
+  {
+    name: "Sports Hub",
+    description: "Indoor activity zone for training, recreation, and student fitness programs throughout the year.",
+    top: "22%",
+    left: "60%",
+  },
+  {
+    name: "Basketball Ground",
+    description: "Outdoor courts beside the sports hub for team drills, practice sessions, and student tournaments.",
+    top: "27%",
+    left: "69%",
+  },
+  {
+    name: "Football Ground",
+    description: "Large turf field with track access for practice sessions, inter-college matches, and events.",
+    top: "22%",
+    left: "82%",
+  },
+  {
+    name: "Cafeteria",
+    description: "Central food court where students gather between classes for meals, refreshments, and informal meetings.",
+    top: "37%",
+    left: "63%",
+  },
+  {
+    name: "Open Discussion Area",
+    description: "Green collaborative zone for student conversations, club activity, and peer learning outdoors.",
+    top: "46%",
+    left: "46%",
+  },
+  {
+    name: "Central Library",
+    description: "The academic heart of campus with reading halls, reference collections, and digital resources.",
+    top: "73%",
+    left: "37%",
+  },
+  {
+    name: "Admission Office, Placement Cell",
+    description: "Support center for admissions guidance, candidate counseling, placement coordination, and recruiter outreach.",
+    top: "78%",
+    left: "11.5%",
+  },
+  {
+    name: "Engineering Block",
+    description: "Core academic building with classrooms, departmental labs, and project spaces for technical programs.",
+    top: "74%",
+    left: "57%",
+  },
+  {
+    name: "Parking Lot",
+    description: "Dedicated parking zone for visitors, staff, and campus operations with easy access to the main entry road.",
+    top: "54%",
+    left: "14%",
+  },
+  {
+    name: "Big Empty Ground for Events",
+    description: "Multi-use open ground for large gatherings, festivals, sports activity, and major campus events.",
+    top: "58%",
+    left: "77.5%",
+  },
+  {
+    name: "Open Amphitheatre",
+    description: "Open-air performance venue used for cultural showcases, orientations, and campus gatherings.",
+    top: "60%",
+    left: "93%",
+  },
+];
+
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [tickerMetrics, setTickerMetrics] = useState({
     offset: 0,
     travel: 0,
   });
+  const [campusInView, setCampusInView] = useState(false);
+  const [innovationInView, setInnovationInView] = useState(false);
   const activeSlide = slideImages[currentSlide];
   const tickerViewportRef = useRef(null);
   const tickerTrackRef = useRef(null);
+  const campusSectionRef = useRef(null);
+  const innovationSectionRef = useRef(null);
 
   useEffect(() => {
     if (slideImages.length <= 1) {
@@ -112,6 +198,60 @@ export default function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    const section = campusSectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        setCampusInView(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.22,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const section = innovationSectionRef.current;
+
+    if (!section) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) {
+          return;
+        }
+
+        setInnovationInView(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.24,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main id="home">
       <section className="hero-section">
@@ -158,7 +298,10 @@ export default function Hero() {
 
       <section className="highlights" id="academic">
         <div className="cards-shell campus-info-section">
-          <div className="campus-info-grid">
+          <div
+            ref={campusSectionRef}
+            className={`campus-info-grid${campusInView ? " is-visible" : ""}`}
+          >
             <div className="campus-collage" aria-hidden="true">
               <div className="campus-collage-tall">
                 <img src={campusImages[0] ?? activeSlide} alt="" />
@@ -206,7 +349,10 @@ export default function Hero() {
         </div>
 
         <div className="cards-shell innovation-showcase-section" id="admission">
-          <div className="innovation-showcase-grid">
+          <div
+            ref={innovationSectionRef}
+            className={`innovation-showcase-grid${innovationInView ? " is-visible" : ""}`}
+          >
             <div className="innovation-showcase-copy">
               <p className="innovation-showcase-kicker">Innovation Ecosystem</p>
               <h2>Impact your world through study</h2>
@@ -224,6 +370,39 @@ export default function Hero() {
                 alt="Innovation ecosystem placeholder"
               />
             </div>
+          </div>
+        </div>
+
+        <div className="cards-shell virtual-tour-section">
+          <div className="virtual-tour-header">
+            <p className="virtual-tour-kicker">Campus Tour</p>
+            <h2>Explore key spaces across the campus map.</h2>
+          </div>
+
+          <div className="virtual-tour-stage">
+            <img
+              className="virtual-tour-map"
+              src={virtualCampusImage}
+              alt="Campus tour placeholder map"
+            />
+
+            {TOUR_LOCATIONS.map((location) => (
+              <button
+                key={location.name}
+                type="button"
+                className="virtual-tour-hotspot"
+                aria-label={location.name}
+                style={{ top: location.top, left: location.left }}
+              >
+                <span className="virtual-tour-pin" aria-hidden="true">
+                  <span className="virtual-tour-pin-hole" />
+                </span>
+                <span className="virtual-tour-tooltip">
+                  <strong>{location.name}</strong>
+                  <span>{location.description}</span>
+                </span>
+              </button>
+            ))}
           </div>
         </div>
       </section>
