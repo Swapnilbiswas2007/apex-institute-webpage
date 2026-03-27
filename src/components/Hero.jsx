@@ -9,7 +9,14 @@ const slideModules = import.meta.glob(
   }
 );
 
-const slideImages = Object.values(slideModules).sort();
+const slideImages = Object.entries(slideModules)
+  .sort(([leftPath], [rightPath]) =>
+    leftPath.localeCompare(rightPath, undefined, {
+      numeric: true,
+      sensitivity: "base",
+    })
+  )
+  .map(([, src]) => src);
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,41 +49,6 @@ export default function Hero() {
                   <img src={src} alt="" />
                 </div>
               ))}
-            </div>
-
-            <div className="hero-overlay" />
-
-            <div className="hero-copy">
-              <p className="eyebrow">Shape your future with confidence</p>
-              <h1>Career-focused learning for tomorrow&apos;s innovators.</h1>
-              <p className="hero-text">
-                Apex Institute of Technology helps students build practical
-                skills in engineering, computing, and applied sciences through
-                hands-on learning.
-              </p>
-
-              <div className="hero-actions">
-                <a className="btn btn-primary" href="#admission">
-                  Apply Now
-                </a>
-                <a className="btn btn-secondary" href="#academic">
-                  Explore Academics
-                </a>
-              </div>
-
-              <div className="hero-dots" aria-label="Homepage slideshow status">
-                {slideImages.map((src, index) => (
-                  <button
-                    key={`${src}-dot`}
-                    type="button"
-                    className={`hero-dot ${
-                      index === currentSlide ? "is-active" : ""
-                    }`}
-                    onClick={() => setCurrentSlide(index)}
-                    aria-label={`Show slide ${index + 1}`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
         </div>

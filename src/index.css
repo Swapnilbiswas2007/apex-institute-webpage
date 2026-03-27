@@ -206,7 +206,7 @@ img {
 }
 
 .hero-section {
-  padding: 7rem 0 3.5rem;
+  padding: 1.25rem 0 2rem;
   background:
     radial-gradient(circle at top left, rgba(24, 160, 251, 0.16), transparent 35%),
     linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
@@ -215,14 +215,13 @@ img {
 .hero-stage {
   position: relative;
   overflow: hidden;
-  min-height: 680px;
+  min-height: clamp(420px, calc(100vh - 15.5rem), 620px);
   border-radius: 2rem;
   box-shadow: 0 26px 70px rgba(14, 33, 68, 0.12);
 }
 
 .hero-slides,
-.hero-slide,
-.hero-overlay {
+.hero-slide {
   position: absolute;
   inset: 0;
 }
@@ -240,99 +239,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.hero-overlay {
-  background:
-    linear-gradient(90deg, rgba(7, 19, 33, 0.72) 0%, rgba(7, 19, 33, 0.24) 42%, rgba(7, 19, 33, 0.12) 100%),
-    linear-gradient(180deg, rgba(7, 19, 33, 0.16) 0%, rgba(7, 19, 33, 0.55) 100%);
-}
-
-.eyebrow {
-  margin: 0 0 0.75rem;
-  color: #9dc8ff;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  min-height: 680px;
-  max-width: 760px;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 3.5rem;
-  color: #fff;
-}
-
-.hero-copy h1 {
-  margin: 0;
-  font-size: clamp(2.8rem, 5vw, 5.4rem);
-  line-height: 1.05;
-}
-
-.hero-text {
-  max-width: 64ch;
-  margin: 1rem 0 0;
-  font-size: 1.1rem;
-  color: rgba(240, 246, 255, 0.84);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  padding: 0.8rem 1.25rem;
-  border-radius: 999px;
-  font-weight: 700;
-}
-
-.btn-primary {
-  color: #fff;
-  background: #0b5cff;
-}
-
-.btn-secondary {
-  border: 1px solid rgba(11, 92, 255, 0.18);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
-}
-
-.hero-dots {
-  display: flex;
-  gap: 0.7rem;
-  margin-top: 2.2rem;
-}
-
-.hero-dot {
-  width: 0.85rem;
-  height: 0.85rem;
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease;
-}
-
-.hero-dot.is-active {
-  transform: scale(1.18);
-  background: #fff;
 }
 
 .highlights {
@@ -721,16 +627,11 @@ img {
   }
 
   .hero-section {
-    padding-top: 5.5rem;
+    padding-top: 0.9rem;
   }
 
   .hero-stage {
-    min-height: 560px;
-  }
-
-  .hero-copy {
-    min-height: 560px;
-    padding: 1.5rem;
+    min-height: clamp(280px, calc(100vh - 11rem), 420px);
   }
 
   .hero-shell,
