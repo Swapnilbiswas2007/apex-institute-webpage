@@ -2,23 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import AlumniSection from "./AlumniSection";
 
-const slideModules = import.meta.glob(
-  "../../public/homepage-slideshow/*.{png,jpg,jpeg,webp,avif,svg}",
-  {
-    eager: true,
-    import: "default",
-    query: "?url",
-  }
-);
-
-const slideImages = Object.entries(slideModules)
-  .sort(([leftPath], [rightPath]) =>
-    leftPath.localeCompare(rightPath, undefined, {
-      numeric: true,
-      sensitivity: "base",
-    })
-  )
-  .map(([, src]) => src);
+const slideImages = [
+  "/homepage-slideshow/sd1.jpeg",
+  "/homepage-slideshow/sd2.jpeg",
+  "/homepage-slideshow/sd3.jpeg",
+  "/homepage-slideshow/sd4.jpeg",
+];
 
 const campusImages = [
   "/campus-collage/img1.jpeg",
