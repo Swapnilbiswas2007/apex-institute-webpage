@@ -555,20 +555,73 @@ img {
   text-transform: none;
 }
 
-.cards-grid {
+.innovation-showcase-section {
+  padding: 2.5rem 0 0.5rem;
+}
+
+.innovation-showcase-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.88fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 6rem);
+  min-height: 430px;
+  padding: 2rem 0 1rem;
 }
 
-.info-card {
-  padding: 1.5rem;
-  border-radius: 1.25rem;
-  background: #fff;
-  box-shadow: 0 16px 40px rgba(14, 33, 68, 0.08);
+.innovation-showcase-copy {
+  max-width: 35rem;
+  padding-left: clamp(0rem, 2vw, 1rem);
 }
 
-.info-card h2,
+.innovation-showcase-kicker {
+  margin: 0 0 0.85rem;
+  color: #0f4f80;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.innovation-showcase-copy h2 {
+  margin: 0;
+  color: #0f4f80;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.04;
+  text-transform: uppercase;
+}
+
+.innovation-showcase-copy p {
+  max-width: 32rem;
+  margin: 1.1rem 0 0;
+  color: #35475c;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.innovation-showcase-rule {
+  display: block;
+  width: 6.8rem;
+  height: 0.28rem;
+  margin-top: 1.6rem;
+  border-radius: 999px;
+  background: #0f4f80;
+}
+
+.innovation-showcase-media {
+  display: flex;
+  justify-content: center;
+}
+
+.innovation-showcase-media img {
+  width: min(100%, 30rem);
+  height: auto;
+  object-fit: contain;
+  margin-left: -1.5rem;
+  filter: drop-shadow(0 22px 34px rgba(15, 79, 128, 0.12));
+}
+
+.innovation-showcase-copy h2,
 .site-footer h2 {
   margin-top: 0;
 }
@@ -1145,6 +1198,27 @@ img {
   .campus-collage {
     grid-template-columns: 1fr;
     min-height: auto;
+  }
+
+  .innovation-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    padding-top: 1.5rem;
+  }
+
+  .innovation-showcase-copy {
+    max-width: none;
+    padding-left: 0;
+  }
+
+  .innovation-showcase-media {
+    justify-content: center;
+  }
+
+  .innovation-showcase-media img {
+    width: min(100%, 22rem);
+    margin-left: 0;
   }
 
   .campus-collage-tall {

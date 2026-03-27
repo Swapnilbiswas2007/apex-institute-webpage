@@ -24,6 +24,8 @@ const campusImages = [
   "/campus-collage/img2.jpeg",
   "/campus-collage/img3.jpeg",
 ];
+const innovationShowcaseImage =
+  "/innovation-showcase/Screenshot 2026-03-27 162756.png";
 
 const ANNOUNCEMENTS = [
   { label: "2026-27 Fees", link: "/announcement/scholarships" },
@@ -203,26 +205,26 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="cards-shell cards-grid">
-          <article className="info-card">
-            <h2>Industry-ready programs</h2>
-            <p>
-              Practical coursework designed to align with modern technical
-              careers.
-            </p>
-          </article>
-          <article className="info-card">
-            <h2>Experienced faculty</h2>
-            <p>
-              Learn from mentors with academic depth and real-world expertise.
-            </p>
-          </article>
-          <article className="info-card" id="admission">
-            <h2>Admissions open</h2>
-            <p>
-              Start your application and take the next step toward your goals.
-            </p>
-          </article>
+        <div className="cards-shell innovation-showcase-section" id="admission">
+          <div className="innovation-showcase-grid">
+            <div className="innovation-showcase-copy">
+              <p className="innovation-showcase-kicker">Innovation Ecosystem</p>
+              <h2>Impact your world through study</h2>
+              <p>
+                Encourage students and faculty to catalyze the development of
+                innovation-driven enterprises through practical research,
+                incubation support, and industry-connected learning.
+              </p>
+              <span className="innovation-showcase-rule" aria-hidden="true" />
+            </div>
+
+            <div className="innovation-showcase-media">
+              <img
+                src={innovationShowcaseImage}
+                alt="Innovation ecosystem placeholder"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </main>
