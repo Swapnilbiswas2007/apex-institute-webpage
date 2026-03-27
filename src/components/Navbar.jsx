@@ -105,14 +105,7 @@ export default function Navbar() {
 
   return (
     <header className="site-header">
-      <div
-        className={cn(
-          "mx-auto mb-3 w-[calc(100%-2rem)] overflow-hidden transition-all duration-200 ease-out 2xl:max-w-[1680px]",
-          scrolled
-            ? "pointer-events-none mb-0 max-h-0 translate-y-[-14px] opacity-0"
-            : "max-h-[12rem] translate-y-0 opacity-100"
-        )}
-      >
+      <div className="site-header-top mx-auto mb-3 w-[calc(100%-2rem)] 2xl:max-w-[1680px]">
         <div className="brand-ribbon">
           <Link className="brand-ribbon-main" to="/">
             <span className="brand-logo-slot" aria-hidden="true">
@@ -122,7 +115,7 @@ export default function Navbar() {
               <strong>APEX</strong>
               <span className="brand-ribbon-title">Institute of Technology</span>
               <small>Innovation | Research | Excellence</small>
-              <em>Est. 1985</em>
+              <em>Estd. 2002</em>
             </span>
           </Link>
 
@@ -150,11 +143,11 @@ export default function Navbar() {
 
       <div
         className={cn(
-          "mx-auto flex w-[calc(100%-2rem)] items-center justify-center gap-4 rounded-[22px] border px-4 py-3 transition-all duration-200 ease-out md:px-6 2xl:max-w-[1680px]",
+          "site-header-nav mx-auto flex w-[calc(100%-2rem)] items-center justify-center gap-4 rounded-[22px] border px-4 py-3 transition-all duration-200 ease-out md:px-6 2xl:max-w-[1680px]",
           scrolled
             ? isDarkMode
-              ? "mt-2 border-white/10 bg-[#101723]/96 px-4 py-2 shadow-[0_14px_34px_rgba(0,0,0,0.32)]"
-              : "mt-2 border-black/8 bg-white/96 px-4 py-2 shadow-[0_14px_34px_rgba(8,15,30,0.09)]"
+              ? "border-white/10 bg-[#101723]/96 px-4 py-2 shadow-[0_14px_34px_rgba(0,0,0,0.32)]"
+              : "border-black/8 bg-white/96 px-4 py-2 shadow-[0_14px_34px_rgba(8,15,30,0.09)]"
             : isDarkMode
               ? "border-white/10 bg-[#101723]/96 px-5 py-3 shadow-[0_12px_34px_rgba(0,0,0,0.28)]"
               : "border-black/8 bg-white/96 px-5 py-3 shadow-[0_12px_34px_rgba(8,15,30,0.08)]"

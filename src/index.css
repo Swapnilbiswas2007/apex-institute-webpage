@@ -80,11 +80,21 @@ img {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 40;
   padding: 0.85rem 0 0;
   background: transparent;
+}
+
+.site-header-top {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header-nav {
+  position: sticky;
+  top: 0.85rem;
+  z-index: 40;
   will-change: transform;
 }
 
@@ -311,6 +321,53 @@ img {
     linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
 }
 
+.announcement-ribbon {
+  margin-bottom: 1rem;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid rgba(19, 34, 56, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 30px rgba(14, 33, 68, 0.08);
+  overflow: hidden;
+}
+
+.announcement-ribbon-viewport {
+  overflow: hidden;
+}
+
+.announcement-ribbon-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  transform: translateX(var(--ticker-start, -100%));
+  animation: announcement-ticker 16s linear infinite;
+}
+
+.announcement-ribbon-link {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #24384f;
+}
+
+.announcement-ribbon-separator {
+  margin: 0 1.1rem;
+  color: #8ca0b7;
+}
+
+@keyframes announcement-ticker {
+  from {
+    transform: translateX(var(--ticker-start, -100%));
+  }
+
+  to {
+    transform: translateX(calc(var(--ticker-start, -100%) + var(--ticker-distance, 100vw)));
+  }
+}
+
 .hero-stage {
   position: relative;
   overflow: hidden;
@@ -336,6 +393,166 @@ img {
 
 .highlights {
   padding: 2rem 0 4.5rem;
+}
+
+.campus-info-section {
+  margin-bottom: 2rem;
+}
+
+.campus-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.campus-collage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 1rem;
+  min-height: 540px;
+}
+
+.campus-collage-tall,
+.campus-collage-card {
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.campus-collage-tall {
+  height: 100%;
+}
+
+.campus-collage-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.campus-collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campus-info-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2.2rem;
+}
+
+.campus-ribbon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: min(50vw, 36rem);
+  min-width: 20rem;
+  margin: -0.35rem auto 1.35rem;
+  padding: 1.2rem 3.4rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #eef7ff 0%, #dceeff 100%);
+  color: #2c6f9f;
+  box-shadow:
+    inset 0 -3px 0 rgba(108, 153, 193, 0.14),
+    0 10px 24px rgba(120, 166, 206, 0.14);
+}
+
+.campus-ribbon::before,
+.campus-ribbon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6.5rem;
+  height: 4.1rem;
+  background: linear-gradient(180deg, #e8f4ff 0%, #d2e9ff 100%);
+  z-index: -1;
+}
+
+.campus-ribbon::before {
+  left: -4rem;
+  clip-path: polygon(100% 18%, 0 0, 34% 50%, 0 100%, 100% 82%, 76% 50%);
+  transform: translateY(-50%);
+}
+
+.campus-ribbon::after {
+  right: -4rem;
+  clip-path: polygon(0 18%, 100% 0, 66% 50%, 100% 100%, 0 82%, 24% 50%);
+  transform: translateY(-50%);
+}
+
+.campus-ribbon span {
+  position: relative;
+  z-index: 1;
+  font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+  font-size: clamp(2.25rem, 3.25vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.campus-info-copy h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+  color: #112239;
+}
+
+.campus-info-text {
+  margin: 1rem 0 0;
+  color: #55687f;
+  font-size: 1rem;
+}
+
+.campus-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.6rem;
+}
+
+.campus-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  color: #32465d;
+  font-weight: 600;
+}
+
+.campus-feature-item span {
+  color: #61ba55;
+  font-weight: 900;
+}
+
+.campus-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.campus-stat {
+  min-width: 0;
+}
+
+.campus-stat strong {
+  display: block;
+  font-size: clamp(2.5rem, 3.6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #0f4f80;
+}
+
+.campus-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #465a70;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: none;
 }
 
 .cards-grid {
@@ -556,6 +773,30 @@ img {
   background:
     radial-gradient(circle at top left, rgba(76, 130, 184, 0.18), transparent 35%),
     linear-gradient(180deg, #111827 0%, #0b1320 100%);
+}
+
+.theme-dark .announcement-ribbon {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(16, 23, 35, 0.92);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+.theme-dark .announcement-ribbon-link {
+  color: #edf4ff;
+}
+
+.theme-dark .announcement-ribbon-separator {
+  color: #6f8299;
+}
+
+.theme-dark .campus-info-copy h2 {
+  color: #f5f9ff;
+}
+
+.theme-dark .campus-info-text,
+.theme-dark .campus-feature-item,
+.theme-dark .campus-stat span {
+  color: #a9b8cd;
 }
 
 .theme-dark .info-card,
@@ -863,6 +1104,63 @@ img {
 
   .hero-section {
     padding-top: 0.9rem;
+  }
+
+  .campus-info-grid,
+  .campus-feature-grid,
+  .campus-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campus-info-copy {
+    padding-top: 1.5rem;
+  }
+
+  .campus-ribbon {
+    min-width: 0;
+    width: min(100%, 20rem);
+    padding: 1rem 1.7rem;
+  }
+
+  .campus-ribbon::before,
+  .campus-ribbon::after {
+    width: 3.4rem;
+    height: 2.8rem;
+  }
+
+  .campus-ribbon::before {
+    left: -1.9rem;
+  }
+
+  .campus-ribbon::after {
+    right: -1.9rem;
+  }
+
+  .campus-ribbon span {
+    font-size: 1.85rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .campus-collage {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .campus-collage-tall {
+    min-height: 280px;
+  }
+
+  .campus-collage-stack {
+    grid-template-rows: repeat(2, minmax(180px, 1fr));
+  }
+
+  .announcement-ribbon {
+    padding: 0.75rem 1rem;
+  }
+
+  .announcement-ribbon-link {
+    font-size: 0.82rem;
   }
 
   .hero-stage {
