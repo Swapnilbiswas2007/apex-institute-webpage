@@ -20,6 +20,7 @@ const slideImages = Object.entries(slideModules)
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const activeSlide = slideImages[currentSlide];
 
   useEffect(() => {
     if (slideImages.length <= 1) {
@@ -33,22 +34,31 @@ export default function Hero() {
     return () => window.clearInterval(intervalId);
   }, []);
 
+  useEffect(() => {
+    if (slideImages.length <= 1) {
+      return;
+    }
+
+    const nextIndex = (currentSlide + 1) % slideImages.length;
+    const nextImage = new Image();
+    nextImage.src = slideImages[nextIndex];
+  }, [currentSlide]);
+
   return (
     <main id="home">
       <section className="hero-section">
         <div className="hero-shell">
           <div className="hero-stage">
             <div className="hero-slides" aria-hidden="true">
-              {slideImages.map((src, index) => (
-                <div
-                  key={src}
-                  className={`hero-slide ${
-                    index === currentSlide ? "is-active" : ""
-                  }`}
-                >
-                  <img src={src} alt="" />
-                </div>
-              ))}
+              <img
+                key={activeSlide}
+                className="hero-slide-image"
+                src={activeSlide}
+                alt=""
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
