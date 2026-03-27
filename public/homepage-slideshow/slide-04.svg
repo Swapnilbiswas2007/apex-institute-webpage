@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Apex graduation celebration">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eff7ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect x="0" y="640" width="1600" height="260" fill="#0f4f80"/>
+  <rect x="110" y="130" width="1380" height="450" rx="34" fill="#ffffff"/>
+  <path d="M170 520c157-155 336-232 537-232s379 77 536 232" fill="none" stroke="#dce9f7" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="810" cy="350" r="104" fill="#d7b76f" opacity="0.35"/>
+  <path d="M810 288 920 340 810 390 700 340 810 288Z" fill="#c5a255"/>
+  <path d="M735 355v64c48 24 102 24 150 0v-64" fill="#c5a255"/>
+  <path d="M920 342c32 12 46 42 34 74" fill="none" stroke="#c5a255" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="949" cy="428" r="12" fill="#c5a255"/>
+  <circle cx="320" cy="205" r="10" fill="#d7b76f"/>
+  <circle cx="1265" cy="190" r="12" fill="#d7b76f"/>
+  <circle cx="1210" cy="255" r="8" fill="#d7b76f"/>
+  <circle cx="392" cy="255" r="7" fill="#d7b76f"/>
+</svg>
