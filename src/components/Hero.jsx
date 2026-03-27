@@ -612,6 +612,31 @@ export default function Hero() {
         </div>
 
         <AlumniSection />
+
+        <div className="admissions-banner-section">
+          <div className="admissions-banner">
+            <div className="admissions-banner-frame" aria-hidden="true" />
+            <div className="admissions-banner-pill">Admissions Open</div>
+
+            <div className="admissions-banner-copy">
+              <h2>
+                Undergraduate &amp; Postgraduate
+                <br />
+                Programs at Apex Institute
+              </h2>
+              <p>Experience Apex, Experience Success</p>
+            </div>
+
+            <div className="admissions-banner-actions">
+              <Link className="admissions-banner-button admissions-banner-button-primary" to="/contact-us">
+                Apply Now
+              </Link>
+              <Link className="admissions-banner-button admissions-banner-button-secondary" to="/academic/overview">
+                Explore Programs
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
