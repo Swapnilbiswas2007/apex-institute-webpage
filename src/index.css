@@ -1957,6 +1957,45 @@ img {
   gap: 0.9rem;
 }
 
+.enquire-now-button {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 115;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.85rem;
+  min-height: 10.1rem;
+  padding: 0.68rem 0.45rem;
+  border-radius: 1rem 0 0 1rem;
+  background: linear-gradient(180deg, #0f4f80 0%, #123e67 100%);
+  color: #ffffff;
+  box-shadow: 0 18px 34px rgba(15, 79, 128, 0.28);
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.enquire-now-button:hover,
+.enquire-now-button:focus-visible {
+  background: linear-gradient(180deg, #13619c 0%, #0f4f80 100%);
+  box-shadow: 0 22px 40px rgba(15, 79, 128, 0.34);
+  transform: translateY(-50%) translateX(-2px);
+}
+
+.enquire-now-button span {
+  display: block;
+}
+
 .chatbot-launcher {
   display: inline-flex;
   align-items: center;
@@ -2153,6 +2192,11 @@ img {
     radial-gradient(circle at top left, rgba(126, 192, 255, 0.14), transparent 34%),
     rgba(16, 23, 35, 0.98);
   box-shadow: 0 28px 64px rgba(0, 0, 0, 0.34);
+}
+
+.theme-dark .enquire-now-button {
+  background: linear-gradient(180deg, #1b69a5 0%, #103d66 100%);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
 }
 
 .theme-dark .chatbot-popup-header,
@@ -2519,6 +2563,13 @@ img {
     right: 0.75rem;
     bottom: 0.75rem;
     align-items: stretch;
+  }
+
+  .enquire-now-button {
+    min-width: 2.5rem;
+    min-height: 8.9rem;
+    padding: 0.52rem 0.38rem;
+    font-size: 0.74rem;
   }
 
   .chatbot-popup {

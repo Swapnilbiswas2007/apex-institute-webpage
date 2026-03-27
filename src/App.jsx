@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import ChatbotWidget from "./components/ChatbotWidget";
+import EnquireNowButton from "./components/EnquireNowButton";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import MenuDetailPage from "./pages/MenuDetailPage";
@@ -33,6 +34,7 @@ function App() {
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
       <ChatbotWidget />
+      <EnquireNowButton />
     </>
   );
 }
