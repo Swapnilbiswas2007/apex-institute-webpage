@@ -2,7 +2,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const FALLBACK_CONTACT_IMAGES = [
-  "/homepage-slideshow/sd2.jpeg",
+  "/campus-collage/img1.jpeg",
   "/campus-collage/img3.jpeg",
 ];
 
@@ -31,8 +31,8 @@ const ENQUIRY_TOPICS = [
 ];
 
 const CONTACT_IMAGES = [
-  "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1400&auto=format&fit=crop",
+  "/campus-collage/img1.jpeg",
+  "/campus-collage/img3.jpeg",
 ];
 
 function handleImageFallback(event, fallbackSrc) {

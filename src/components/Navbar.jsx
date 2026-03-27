@@ -6,74 +6,7 @@ import { NAV_ITEMS } from "@/lib/navigation";
 import { Link } from "react-router-dom";
 
 const THEME_STORAGE_KEY = "apex-theme";
-
-function ApexLogoMark() {
-  return (
-    <svg
-      viewBox="0 0 120 120"
-      className="brand-logo-image"
-      role="img"
-      aria-label="Apex Institute logo"
-    >
-      <rect width="120" height="120" rx="24" fill="url(#apex-bg)" />
-      <defs>
-        <linearGradient id="apex-bg" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stopColor="#fffaf0" />
-          <stop offset="100%" stopColor="#f1eadc" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M61 18 94 88H80l-7-14H46l-7 14H26l35-70Z"
-        fill="none"
-        stroke="#0f4f80"
-        strokeWidth="7"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M34 78c13 8 39 8 52 0"
-        fill="none"
-        stroke="#0f4f80"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M48 57c9-8 15-8 24 0"
-        fill="none"
-        stroke="#c4a45b"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M43 63h34"
-        stroke="#c4a45b"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M60 49 74 57 60 64 46 57 60 49Z"
-        fill="#c4a45b"
-      />
-      <path
-        d="M49 60v8c7 4 15 4 22 0v-8"
-        fill="#c4a45b"
-      />
-      <path
-        d="M77 58c7 4 9 13 4 19"
-        fill="none"
-        stroke="#c4a45b"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-      <circle cx="84" cy="79" r="2.4" fill="#c4a45b" />
-      <circle cx="34" cy="28" r="2.4" fill="#c4a45b" />
-      <circle cx="48" cy="18" r="2.7" fill="#c4a45b" />
-      <circle cx="71" cy="16" r="3" fill="#c4a45b" />
-      <circle cx="85" cy="27" r="2.4" fill="#c4a45b" />
-      <circle cx="23" cy="46" r="3" fill="#c4a45b" />
-      <circle cx="97" cy="48" r="2.6" fill="#c4a45b" />
-    </svg>
-  );
-}
+const NAVBAR_LOGO_SRC = "/logo.png";
 
 export default function Navbar() {
   const scrolled = useScroll(24);
@@ -109,7 +42,13 @@ export default function Navbar() {
         <div className="brand-ribbon">
           <Link className="brand-ribbon-main" to="/">
             <span className="brand-logo-slot" aria-hidden="true">
-              <ApexLogoMark />
+              <img
+                className="brand-logo-image"
+                src={NAVBAR_LOGO_SRC}
+                alt=""
+                loading="eager"
+                decoding="async"
+              />
             </span>
             <span className="brand-ribbon-copy">
               <strong>APEX</strong>

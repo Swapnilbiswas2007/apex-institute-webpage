@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const FALLBACK_HERO_IMAGE = "/homepage-slideshow/sd1.jpeg";
+const FALLBACK_HERO_IMAGE = "/campus-collage/img1.jpeg";
 const FALLBACK_GALLERY_IMAGES = [
   "/campus-collage/img1.jpeg",
   "/campus-collage/img2.jpeg",
@@ -10,8 +10,7 @@ const FALLBACK_GALLERY_IMAGES = [
 const SECTION_THEMES = {
   About: {
     eyebrow: "Institutional Profile",
-    heroImage:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/campus-collage/img1.jpeg",
     summary:
       "Explore the people, values, and institutional leadership that shape the academic culture and long-term vision of Apex Institute.",
     metrics: [
@@ -20,15 +19,11 @@ const SECTION_THEMES = {
       { label: "Strategic initiatives", value: "18" },
     ],
     atmosphere: ["Leadership", "Vision", "Governance"],
-    gallery: [
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
-    ],
+    gallery: ["/campus-collage/img2.jpeg", "/campus-collage/img3.jpeg"],
   },
   Academic: {
     eyebrow: "Academic Excellence",
-    heroImage:
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/course-placeholders/ug cse ug.jpeg",
     summary:
       "Discover the academic structure, departments, services, and learning resources that support a rigorous and future-ready campus experience.",
     metrics: [
@@ -37,15 +32,11 @@ const SECTION_THEMES = {
       { label: "Learning resources", value: "24/7" },
     ],
     atmosphere: ["Curriculum", "Faculty", "Resources"],
-    gallery: [
-      "https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop",
-    ],
+    gallery: ["/course-placeholders/ug cse ug.jpeg", "/course-placeholders/ug ece.jpeg"],
   },
   Announcement: {
     eyebrow: "Student Updates",
-    heroImage:
-      "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/campus-collage/img3.jpeg",
     summary:
       "Stay informed with current notices, support schemes, event updates, and essential student-facing announcements from across campus.",
     metrics: [
@@ -54,15 +45,11 @@ const SECTION_THEMES = {
       { label: "Weekly updates", value: "24/7" },
     ],
     atmosphere: ["Notices", "Updates", "Support"],
-    gallery: [
-      "https://images.unsplash.com/photo-1522202222206-b7501f7beff5?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1515169067868-5387ec356754?q=80&w=1200&auto=format&fit=crop",
-    ],
+    gallery: ["/campus-collage/img3.jpeg", "/campus-collage/img1.jpeg"],
   },
   Placement: {
     eyebrow: "Career Outcomes",
-    heroImage:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/placement-gallery/placement stats.jpeg",
     summary:
       "Review the training ecosystem, recruiter network, placement achievements, and student career pathways built across the institute.",
     metrics: [
@@ -71,15 +58,11 @@ const SECTION_THEMES = {
       { label: "Placement support", value: "360deg" },
     ],
     atmosphere: ["Preparation", "Recruiters", "Success"],
-    gallery: [
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
-    ],
+    gallery: ["/placement-gallery/batch stats.jpeg", "/virtual-campus/campusmap.jpeg"],
   },
   "Campus Life": {
     eyebrow: "Student Experience",
-    heroImage:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/campus-collage/img2.jpeg",
     summary:
       "See how academics, student communities, campus spaces, wellness, and everyday facilities come together to shape life at Apex.",
     metrics: [
@@ -88,15 +71,11 @@ const SECTION_THEMES = {
       { label: "Residential support", value: "Full-time" },
     ],
     atmosphere: ["Community", "Facilities", "Belonging"],
-    gallery: [
-      "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=1200&auto=format&fit=crop",
-    ],
+    gallery: ["/virtual-campus/campusmap.jpeg", "/campus-collage/img1.jpeg"],
   },
   Admission: {
     eyebrow: "Admissions Journey",
-    heroImage:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop",
+    heroImage: "/course-placeholders/pg mca.jpeg",
     summary:
       "Understand the pathways, eligibility expectations, and support systems available for applicants exploring Apex programs.",
     metrics: [
@@ -105,10 +84,7 @@ const SECTION_THEMES = {
       { label: "Counselling support", value: "1:1" },
     ],
     atmosphere: ["Programs", "Eligibility", "Guidance"],
-    gallery: [
-      "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop",
-    ],
+    gallery: ["/course-placeholders/ug arch.jpeg", "/course-placeholders/pg mca.jpeg"],
   },
 };
 

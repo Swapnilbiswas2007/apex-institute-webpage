@@ -89,7 +89,7 @@ const TestimonialCard = ({
   index,
   layout = false,
   onCardClose = () => {},
-  backgroundImage = "https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?q=80&w=3129&auto=format&fit=crop",
+  backgroundImage = "/campus-collage/img3.jpeg",
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);

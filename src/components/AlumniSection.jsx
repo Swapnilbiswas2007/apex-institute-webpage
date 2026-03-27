@@ -66,8 +66,7 @@ const ALUMNI_DETAILS = {
   },
 };
 
-const ALUMNI_BACKGROUND =
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop";
+const ALUMNI_BACKGROUND = "/campus-collage/img3.jpeg";
 
 export default function AlumniSection() {
   const cards = ALUMNI_IDS.map((alumniId, index) => (
