@@ -998,6 +998,30 @@ img {
   padding: 4rem 0 2rem;
 }
 
+.alumni-section {
+  padding: 4.5rem 0 1rem;
+}
+
+.alumni-section-header {
+  max-width: 52rem;
+}
+
+.alumni-section-kicker {
+  margin: 0 0 0.7rem;
+  color: #0f4f80;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.alumni-section-header h2 {
+  margin: 0;
+  color: #2c241c;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+}
+
 .placement-gallery-header {
   max-width: 46rem;
   margin-bottom: 1.8rem;
@@ -1277,6 +1301,14 @@ img {
 
 .theme-dark .announcement-ribbon-link {
   color: #edf4ff;
+}
+
+.theme-dark .alumni-section-kicker {
+  color: #7ec0ff;
+}
+
+.theme-dark .alumni-section-header h2 {
+  color: #fff4e8;
 }
 
 .theme-dark .announcement-ribbon-separator {

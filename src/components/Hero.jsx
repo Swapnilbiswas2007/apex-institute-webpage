@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import AlumniSection from "./AlumniSection";
 
 const slideModules = import.meta.glob(
   "../../public/homepage-slideshow/*.{png,jpg,jpeg,webp,avif,svg}",
@@ -609,6 +610,8 @@ export default function Hero() {
             </article>
           </div>
         </div>
+
+        <AlumniSection />
       </section>
     </main>
   );
