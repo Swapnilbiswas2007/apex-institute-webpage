@@ -1,7 +1,32 @@
+import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import MenuDetailPage from "./pages/MenuDetailPage";
+import {
+  MENU_PAGES,
+  MENU_PAGE_REDIRECTS,
+  SECTION_REDIRECTS,
+} from "./lib/navigation";
 
 function App() {
-  return <Home />;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      {SECTION_REDIRECTS.map(({ from, to }) => (
+        <Route key={from} path={from} element={<Navigate replace to={to} />} />
+      ))}
+      {MENU_PAGE_REDIRECTS.map(({ from, to }) => (
+        <Route key={from} path={from} element={<Navigate replace to={to} />} />
+      ))}
+      {MENU_PAGES.map((page) => (
+        <Route
+          key={page.link}
+          path={page.link}
+          element={<MenuDetailPage page={page} />}
+        />
+      ))}
+      <Route path="*" element={<Navigate replace to="/" />} />
+    </Routes>
+  );
 }
 
 export default App;

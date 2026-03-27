@@ -81,8 +81,8 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                   )}
                 </button>
               ) : (
-                <a
-                  href={navItem.link || "#"}
+                <Link
+                  to={navItem.link || "#"}
                   className={`group relative flex w-full items-center justify-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 hover:text-black ${
                     isSimpleLink ? "text-black" : "text-slate-800"
                   }`}
@@ -97,7 +97,7 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                       style={{ borderRadius: 99 }}
                     />
                   )}
-                </a>
+                </Link>
               )}
 
               <AnimatePresence>

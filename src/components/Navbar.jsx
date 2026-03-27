@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import MegaMenu from "@/components/ui/mega-menu";
 import { useScroll } from "@/components/ui/use-scroll";
 import { NAV_ITEMS } from "@/lib/navigation";
+import { Link } from "react-router-dom";
 
 function ApexLogoMark() {
   return (
@@ -73,6 +74,10 @@ function ApexLogoMark() {
 
 export default function Navbar() {
   const scrolled = useScroll(24);
+  const mobileNavItems = NAV_ITEMS.map((item) => ({
+    ...item,
+    mobileLink: item.link || item.subMenus?.[0]?.items?.[0]?.link || "/",
+  }));
 
   return (
     <header className="site-header">
@@ -84,7 +89,7 @@ export default function Navbar() {
             : "max-h-[12rem] translate-y-0 opacity-100"
         )}
       >
-        <a className="brand-ribbon" href="#home">
+        <Link className="brand-ribbon" to="/">
           <span className="brand-logo-slot" aria-hidden="true">
             <ApexLogoMark />
           </span>
@@ -94,7 +99,7 @@ export default function Navbar() {
             <small>Innovation | Research | Excellence</small>
             <em>Est. 1985</em>
           </span>
-        </a>
+        </Link>
       </div>
 
       <div
@@ -116,10 +121,10 @@ export default function Navbar() {
             />
           </div>
           <div className="nav-links md:hidden">
-            {NAV_ITEMS.map((item) => (
-              <a key={item.id} href={item.link || "#"}>
+            {mobileNavItems.map((item) => (
+              <Link key={item.id} to={item.mobileLink}>
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </nav>

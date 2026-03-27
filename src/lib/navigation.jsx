@@ -313,3 +313,31 @@ export const MENU_PAGES = NAV_ITEMS.flatMap((navItem) =>
     }))
   )
 );
+
+export const MENU_PAGE_REDIRECTS = MENU_PAGES.map((page) => {
+  const segments = page.link.split("/").filter(Boolean);
+  const slug = segments.at(-1);
+
+  if (!slug) {
+    return null;
+  }
+
+  return {
+    from: `/${slug}`,
+    to: page.link,
+  };
+}).filter(Boolean);
+
+export const SECTION_REDIRECTS = NAV_ITEMS.filter((item) => item.subMenus?.length)
+  .map((item) => {
+    const target = item.subMenus[0]?.items[0]?.link;
+
+    if (!target) {
+      return null;
+    }
+
+    const [_, section] = target.split("/");
+
+    return section ? { from: `/${section}`, to: target } : null;
+  })
+  .filter(Boolean);
